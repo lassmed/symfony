@@ -1,0 +1,29 @@
+{% extends 'layout.html.twig' %}
+{% block title %}
+    USERS
+{% endblock %}
+{% block body %}
+    <table class="table">
+        <tr>
+            <td> Name </td>
+            <td> Surname </td>
+            <td> Age </td>
+        </tr>
+        {% for user in users %}
+            {% if loop.index is odd %}
+
+            <tr class="table-light">
+                <td>{{ user.name }}</td>
+                <td>{{ user.surname }}</td>
+                <td>{{ user.age }}</td>
+            </tr>
+            {% else %}
+                    <tr>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.surname }}</td>
+                        <td>{{ user.age }}</td>
+                    </tr>
+                {% endif %}
+        {% endfor %}
+    </table>
+{% endblock %}
